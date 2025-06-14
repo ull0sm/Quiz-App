@@ -15,6 +15,7 @@ public class ResultsFrame extends JFrame {
         setSize(500, 300);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLayout(null);
+        setLocationRelativeTo(null); // center the frame on screen
 
         // Add window listener to return to dashboard
         addWindowListener(new WindowAdapter() {
@@ -29,13 +30,13 @@ public class ResultsFrame extends JFrame {
         label.setBounds(20, 10, 300, 30);
         add(label);
 
-        String[] columns = {"Quiz", "Score"};
+        String[] columns = { "Quiz", "Score" };
         DefaultTableModel model = new DefaultTableModel(columns, 0);
         JTable table = new JTable(model);
 
         List<Attempt> attempts = AttemptDAO.getAttemptsByUser(username);
         for (Attempt a : attempts) {
-            model.addRow(new Object[]{a.getQuiz(), a.getScore()});
+            model.addRow(new Object[] { a.getQuiz(), a.getScore() });
         }
 
         JScrollPane scrollPane = new JScrollPane(table);

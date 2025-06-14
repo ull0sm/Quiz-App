@@ -2,7 +2,6 @@ package ui;
 
 import dao.UserDAO;
 
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -16,6 +15,7 @@ public class RegisterFrame extends JFrame {
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setLocationRelativeTo(null); // center the frame on screen
 
         JPanel panel = new JPanel(new GridLayout(3, 2));
         panel.add(new JLabel("Username:"));
@@ -37,7 +37,8 @@ public class RegisterFrame extends JFrame {
             String password = new String(passwordField.getPassword());
 
             if (username.isEmpty() || password.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Please enter username and password", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please enter username and password", "Error",
+                        JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -52,7 +53,8 @@ public class RegisterFrame extends JFrame {
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Error registering user: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error registering user: " + ex.getMessage(), "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
         });
 

@@ -18,6 +18,7 @@ public class LoginFrame extends JFrame {
         setSize(300, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+        setLocationRelativeTo(null); // center the frame on screen
 
         JLabel userLabel = new JLabel("Username:");
         userLabel.setBounds(30, 30, 80, 25);

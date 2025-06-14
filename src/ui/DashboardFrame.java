@@ -8,6 +8,7 @@ public class DashboardFrame extends JFrame {
         setSize(400, 300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+        setLocationRelativeTo(null); // center the frame on screen
 
         JLabel welcomeLabel = new JLabel("Welcome, " + username);
         welcomeLabel.setBounds(30, 20, 300, 25);

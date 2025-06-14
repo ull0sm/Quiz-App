@@ -26,12 +26,14 @@ public class QuizPlayFrame extends JFrame {
         this.quizName = quizName;
         questions = QuestionDAO.getQuestionsByQuiz(quizName);
         userAnswers = new ArrayList<>();
-        for (int i = 0; i < questions.size(); i++) userAnswers.add(null);
+        for (int i = 0; i < questions.size(); i++)
+            userAnswers.add(null);
 
         setTitle("Quiz - " + quizName);
         setSize(500, 300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+        setLocationRelativeTo(null); // center the frame on screen
 
         questionLabel = new JLabel();
         questionLabel.setBounds(30, 20, 440, 30);
@@ -120,8 +122,9 @@ public class QuizPlayFrame extends JFrame {
     private void saveAnswer() {
         for (int i = 0; i < 4; i++) {
             if (options[i].isSelected()) {
-                char optionLetter = (char)('A' + i); // Convert index to A, B, C, D
-                userAnswers.set(currentIndex, new UserAnswer(questions.get(currentIndex).getId(), String.valueOf(optionLetter)));
+                char optionLetter = (char) ('A' + i); // Convert index to A, B, C, D
+                userAnswers.set(currentIndex,
+                        new UserAnswer(questions.get(currentIndex).getId(), String.valueOf(optionLetter)));
                 break;
             }
         }

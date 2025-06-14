@@ -18,6 +18,7 @@ public class QuizSelectionFrame extends JFrame {
         setSize(400, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+        setLocationRelativeTo(null); // center the frame on screen
 
         JLabel label = new JLabel("Choose a Quiz:");
         label.setBounds(50, 40, 120, 30);
